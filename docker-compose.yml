@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:17
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: absorkun
+      POSTGRES_PASSWORD: absorkun
+      POSTGRES_DB: familykece
+    # volumes:
+    #   - $PWD:/var/lib/postgresql/data
+  adminer:
+    image: dockette/adminer:postgres
+    ports:
+      - 2345:80
