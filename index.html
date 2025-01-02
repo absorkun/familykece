@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form {{.name}}</title>
+    <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form action="/api/products" method="post">
+        <label for="id">id:</label>
+        <input type="text" name="id" id="id">
+        <br>
+        <label for="name">name:</label>
+        <input type="text" name="name" id="name">
+        <br>
+        <label for="price">price:</label>
+        <input type="number" name="price" id="price">
+        <br>
+        <label for="icon">icon:</label>
+        <input type="text" name="icon" id="icon">
+        <br>
+        <label for="category_id">category_id:</label>
+        <input type="text" name="category_id" id="category_id">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <br><br>
+    <button hx-get="/api/products" hx-target="#target" hx-swap="innerHTML">Show</button>
+    <br>
+    <button onclick="unshow()">unshow</button>
+    <div class="" id="target">
+
+    </div>
+    <script>
+        function unshow() {
+            target = document.querySelector("#target")
+            addEventListener("click", function() {
+                this.target.innerHTML = ""
+            })
+        }
+    </script>
+</body>
+</html>

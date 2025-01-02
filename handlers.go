@@ -42,9 +42,20 @@ func addProduct(w http.ResponseWriter, r *http.Request) {
 
 	}
 
-	if err := db.Create(&newProduct).Error; err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-	}
+	// newProduct.ID = r.FormValue("id")
+	// newProduct.Name = r.FormValue("name")
+	// priceStr := r.FormValue("price")
+	// price, err := strconv.ParseFloat(priceStr, 32)
+	// if err != nil {
+	// 	log.Fatal(err.Error())
+	// }
+	// newProduct.Price = float32(price)
+	// newProduct.Icon = r.FormValue("icon")
+	// newProduct.CategoryID = r.FormValue("category_id")
+ //
+	// if err := db.Create(&newProduct).Error; err != nil {
+	// 	http.Error(w, err.Error(), http.StatusInternalServerError)
+	// }
 
 }
 
